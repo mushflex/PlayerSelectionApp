@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Football Team Builder</title>
+    
+    <!-- Bring in Jquery -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
+    
+    
+    <!-- Bring in Angular.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+   
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  	
+  	<!-- bring in the js functions and css styles -->
+  	<script type="text/javascript" src="js/app.js"></script>
+    <link type="text/css" href="css/app.css" rel="stylesheet"  media="screen, projection" />
+  </head>
+  <body ng-app="PlayerSelApp">
+  
+  	<div class="navbar navbar-inverse navbar-fixed-top">
+	    <div class="navbar-inner">
+	      <div class="container-fluid">
+	      	<div class="navbar-header">
+				<a class="navbar-brand" href="#">Starting 11</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<p class="navbar-text pull-right">
+					<button type="submit" class="btn btn-default"><a onclick="saveTeamtoDB()" class="navbar-link">Save</a></button>
+				</p>
+				<ul class="nav navbar-nav">
+				    
+				    <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						 Load Team
+						 <span class="caret"></span>
+					  </a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Team 1</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="#">Team 2</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="#">Team 3</a></li>
+			          </ul>
+			        </li>
+				    
+				</ul>
+			</div>
+		</div>
+	   </div>
+	</div>
+	
+	<!-- make extra space at top for nav panel -->
+	<div class="col-md-12"><br><br><br></div>
+	<div id="container" class="well well-sm sidebar-nav">
+		
+		<div class="col-md-2" ng-controller="benchController" id="player-bench">
+			<div class="well substitutes">
+				<h1>Bench</h1>
+				<!-- injet here through js the players -->
+				<ul>
+					<li class="" ng-repeat="objPlayer in arrPlayers">
+						<span class="player-box label label-default glyphicon glyphicon-user">{{objPlayer.name}}</span>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="col-md-10" ng-controller="fieldController" id="player-field">
+			<div class="defenders">
+				<!-- jquery dropable here only objPlayer type defender -->
+			</div> 
+			<div id="midfielders" class="midfielders">
+				<!-- jquery dropable here only objPlayer type midfielder -->
+			</div> 
+			<div id="forwards" class="forwards">
+				<!-- jquery dropable here only objPlayer type forward -->
+			</div> 
+		</div>
+	</div>
+	
+    
+  
+  </body>
+</html>

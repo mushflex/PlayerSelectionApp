@@ -1,0 +1,29 @@
+div#player-field{
+	background-image: url(../resources/football_pitch.png); 
+	width: 529px; 
+	height: 760px; 
+	border: 1px solid black;
+}
+
+
+div.defenders {
+    margin-top: 140px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+}
+
+div.midfielders {
+    margin-top: 175px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+}
+
+div.forwards {
+    margin-top: 175px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+}
+
+.player-box-dropped{
+	
+};
