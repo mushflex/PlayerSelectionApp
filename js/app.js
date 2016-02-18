@@ -6,17 +6,18 @@ var TeamModel = {
 		
 		//this is manually set for testing purposes for now
 		arrPlayers: [
-	                   {name:"Vincent Kompany", position:"DEF"},
-	                   {name:"Wayne Rooney", position:"FWD"},
-	                   {name:"Juan Mata", position:"MID"},
-	                   {name:"Dalay Blind", position:"DEF"},
-	                   {name:"Eden Hazard", position:"FWD"},
-	                   {name:"Riyad Mahrez", position:"MID"},
-	                   {name:"Jamie Vardy", position:"FWD"},
-	                   {name:"John Terry", position:"DEF"},
-	                   {name:"Aaron Ramsey", position:"MID"},
-	                   {name:"Mesut Ozil", position:"MID"},
-	                   {name:"Chris Smalling", position:"DEF"}
+	                   {fname:"Vincent", lname:"Kompany", position:"DEF"},
+	                   {fname:"Wayne", lname:"Rooney", position:"FWD"},
+	                   {fname:"Juan", lname:"Mata", position:"MID"},
+	                   {fname:"Dalay", lname:"Blind", position:"DEF"},
+	                   {fname:"Eden", lname:"Hazard", position:"FWD"},
+	                   {fname:"Riyad", lname:"Mahrez", position:"MID"},
+	                   {fname:"Jamie", lname:"Vardy", position:"FWD"},
+	                   {fname:"John", lname:"Terry", position:"DEF"},
+	                   {fname:"Aaron", lname:"Ramsey", position:"MID"},
+	                   {fname:"Mesut", lname:"Ozil", position:"MID"},
+	                   {fname:"Chris", lname:"Smalling", position:"DEF"},
+	                   {fname:"Petr", lname:"Cech", position:"GK"}
 	                 ],
 		
 		
@@ -46,15 +47,24 @@ $(document).ready(function(){
 	TeamModel.init();
 	$(".player-box").draggable({
 		stack: '.player-box',
+		appendTo: "body",
+	    helper: "clone",
 		revert: 'invalid'
 	});
-	$("#player-field").droppable({
-		activeClass : "",
+	$(".field-row").droppable({
+		hoverClass: "highlight",
 		//specify what happens in the drop event
 		drop: function(event, ui){
-			console.log("event obj: "+event);
-			console.log("ui dom: "+ui);
-			$(".defenders").append(ui.draggable);
+			console.log("event obj: ", event);
+			console.log("ui dom: ", ui);
+			
+			if( ($(ui.draggable).hasClass( "player-GK" ))&&($(this).hasClass( "field-row-one" ))
+			 || ($(ui.draggable).hasClass( "player-DEF" ))&&($(this).hasClass( "field-row-two" )) 
+			 || ($(ui.draggable).hasClass( "player-MID" ))&&($(this).hasClass( "field-row-three" ))
+			 || ($(ui.draggable).hasClass( "player-FWD" ))&&($(this).hasClass( "field-row-four" ))
+			){
+				$(this).append(ui.draggable);
+			}
 		}
 		
 	});

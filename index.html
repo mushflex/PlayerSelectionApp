@@ -63,28 +63,89 @@
 			<div class="well substitutes">
 				<h1>Bench</h1>
 				<!-- injet here through js the players -->
-				<ul>
-					<li class="" ng-repeat="objPlayer in arrPlayers">
-						<span class="player-box label label-default glyphicon glyphicon-user">{{objPlayer.name}}</span>
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="objPlayer in arrPlayers">
+						<span class="player-box player-{{objPlayer.position}} btn btn-warning btn-xs">{{objPlayer.lname}}</span>
 					</li>
 				</ul>
 				
 			</div>
 		</div>
+		
 		<div class="col-md-10" ng-controller="fieldController" id="player-field">
-			<div class="defenders">
-				<!-- jquery dropable here only objPlayer type defender -->
-			</div> 
-			<div id="midfielders" class="midfielders">
-				<!-- jquery dropable here only objPlayer type midfielder -->
-			</div> 
-			<div id="forwards" class="forwards">
-				<!-- jquery dropable here only objPlayer type forward -->
-			</div> 
+			<br/><br/><br/><br/>
+			<span class="col-md-1 field-row-one"></span>
+			<span class="col-md-2 field-row-one"></span>
+			<span class="col-md-2 field-row-one"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-one"></span>
+			<span class="col-md-2 field-row-one"></span>
+			<span class="col-md-2 field-row-one"></span>
+			<span class="col-md-1 field-row-one"></span>
+			<br/><br/><br/><br/>
+			<span class="col-md-1 field-row-two"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-two"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-two"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-two"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-two"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-two"></span>
+			<span class="col-md-1 field-row-two"></span>
+			<br/><br/><br/><br/><br/><br/><br/><br/>
+			<span class="col-md-1 field-row-three"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-three"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-three"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-three"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-three"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-three"></span>
+			<span class="col-md-1 field-row-three"></span>
+			<br/><br/><br/><br/><br/><br/><br/><br/>
+			<span class="col-md-1 field-row-four"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-four"></span>
+			<span class="col-md-2 field-row-four"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-four"></span>
+			<span class="col-md-2 field-row-four"></span>
+			<span class="col-md-2 well well-sm text-center field-row field-row-four"></span>
+			<span class="col-md-1 field-row-four"></span>
+			
 		</div>
+		
+		
+		<!-- 
+		<div class="col-md-10" ng-controller="fieldController" id="player-field">
+				<br/><br/><br/><br/>
+				<span class="col-md-1 field-row-one"></span>
+				<span class="col-md-2 field-row-one"></span>
+				<span class="col-md-2 field-row-one"></span>
+				<span class="col-md-2 field-row field-row-one"><span class="label label-default glyphicon glyphicon-user">Goal Keeper</span></span>
+				<span class="col-md-2 field-row-one"></span>
+				<span class="col-md-2 field-row-one"></span>
+				<span class="col-md-1 field-row-one"></span>
+				<br/><br/><br/><br/>
+				<span class="col-md-1 field-row-two"></span>
+				<span class="col-md-2 field-row field-row-two"><span class="label label-default glyphicon glyphicon-user">Def</span></span>
+				<span class="col-md-2 field-row field-row-two"><span class="label label-default glyphicon glyphicon-user">Def</span></span>
+				<span class="col-md-2 field-row field-row-two"><span class="label label-default glyphicon glyphicon-user">Def</span></span>
+				<span class="col-md-2 field-row field-row-two"><span class="label label-default glyphicon glyphicon-user">Def</span></span>
+				<span class="col-md-2 field-row field-row-two"><span class="label label-default glyphicon glyphicon-user">Def</span></span>
+				<span class="col-md-1 field-row-two"></span>
+				<br/><br/><br/><br/><br/><br/><br/><br/>
+				<span class="col-md-1 field-row-three"></span>
+				<span class="col-md-2 field-row field-row-three"><span class="label label-default glyphicon glyphicon-user">Mid</span></span>
+				<span class="col-md-2 field-row field-row-three"><span class="label label-default glyphicon glyphicon-user">Mid</span></span>
+				<span class="col-md-2 field-row field-row-three"><span class="label label-default glyphicon glyphicon-user">Mid</span></span>
+				<span class="col-md-2 field-row field-row-three"><span class="label label-default glyphicon glyphicon-user">Mid</span></span>
+				<span class="col-md-2 field-row field-row-three"><span class="label label-default glyphicon glyphicon-user">Mid</span></span>
+				<span class="col-md-1 field-row-three"></span>
+				<br/><br/><br/><br/><br/><br/><br/><br/>
+				<span class="col-md-1 field-row-four"></span>
+				<span class="col-md-2 field-row field-row-four"><span class="label label-default glyphicon glyphicon-user"><br/>Fwd</span></span>
+				<span class="col-md-2 field-row field-row-four"></span>
+				<span class="col-md-2 field-row field-row-four"><span class="label label-default glyphicon glyphicon-user"><br/>Fwd</span></span>
+				<span class="col-md-2 field-row field-row-four"></span>
+				<span class="col-md-2 field-row field-row-four"><span class="label label-default glyphicon glyphicon-user"><br/>Fwd</span></span>
+				<span class="col-md-1 field-row-four"></span>
+			
+		</div>
+		 -->
 	</div>
-	
-    
-  
   </body>
 </html>
